@@ -15,6 +15,13 @@
 {% endif %}
 
 // og:title
+{% if page.ogtitle %}
+  {{ page.ogtitle }}
+{% else %}
+  {{ site.title }}
+{% endif %}
+
+// og:description
 {% if page.ogdescription %}
   {{ page.ogdescription }}
 {% elif page.description %}
