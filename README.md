@@ -2,7 +2,11 @@
 (https://img.shields.io/badge/Release%20Status-W.I.P.-red.svg)
 
 # jekyll-seo-social
-A way to easily import social media information from YAML Front matter or other site information.
+A way to easily import social media information from YAML Front matter or other site information. Also imports specific information for SEO purposes.
+
+This is meant to be a very simple page partial, and thus not very feature rich.
+
+
 
 
 ## Install
