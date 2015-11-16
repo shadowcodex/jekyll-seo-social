@@ -2,5 +2,5 @@
 <meta property="og:url"                content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
 <meta property="og:type"               content="website" />
 <meta property="og:title"              content="{% if page.title %}{{ page.title}}{% else %}{{ site.title }}{% endif %}" />
-<meta property="og:description"        content="{% if page.ogdescription %}{{ page.ogdescription }}{% else if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ page.description }}{% endif %}" />
+<meta property="og:description"        content="{% if page.ogdescription %}{{ page.ogdescription }}{% elif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ page.description }}{% endif %}" />
 <meta property="og:image"              content="{% if page.ogimg %}{{ page.ogimg }}{% endif %}" />
