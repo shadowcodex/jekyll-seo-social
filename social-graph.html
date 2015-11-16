@@ -9,8 +9,16 @@
 {% if page.seokeyword %}<meta name="keywords" content="{{ page.seokeyword }}">{% elif site.seokeyworddefault %}<meta name="keywords" content="{{ site.seokeyworddefault }}">{% endif %}
 
 <!-- Social Media Objects -->
+<!-- Facebook Default Override -->
 <meta property="og:url"                content="{% if page.ogurl %}{{ page.ogurl }}{% else %}{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% endif %}" />
 <meta property="og:type"               content="{% if page.layout == 'post' %}post{% else %}website{% endif %}" />
 <meta property="og:title"              content="{% if page.ogtitle %}{{ page.ogtitle }}{% elif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
 <meta property="og:description"        content="{% if page.ogdescription %}{{ page.ogdescription | truncate: 160 }}{% elif page.description %}{{ page.description | truncate: 160 }}{% elif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | strip_html | strip_newlines | truncate: 160 }}{% endif %}" />
 {% if page.ogimg %}<meta property="og:image"              content="{{page.ogimg}}" />{% elif site.ogimg %}<meta property="og:image"              content="{{site.ogimg}}" />{% endif %}
+<!-- Twitter Card: Summary Large Image Default -->
+<!-- need to figure out a way to make this default and allow a switch in frontmatter -->
+{% if page.twittercard %}<meta name="twitter:card" content="summary_large_image" />{% else %}<meta name="twitter:card" content="summary" />{% endif %}
+<meta name="twitter:site"              content="{% if page.twittersite %}@{{ page.twittersite }}{% else %}@{{ site.twitter_username }}{% endif %}">
+<meta name="twitter:title"             content="{% if page.twittertitle %}{{ page.twittertitle }} | {{ site.title }}{% elif page.ogtitle %}{{ page.ogtitle }} | {{ site.title}}{% elif page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+<meta name="twitter:description"       content="{% if page.twitterdescription %}{{ page.twitterdescription | truncate: 160 }}{% elif page.ogdescription %}{{ page.ogdescription | truncate: 160 }}{% elif page.description %}{{ page.description | truncate: 160 }}{% elif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
+{% if page.twitterimage %}<meta name="twitter:image"              content="{{page.twitterimage}}" />{% elif page.ogimg %}<meta name="twitter:image"              content="{{page.ogimg}}" />{% elif site.ogimg %}<meta name="twitter:image"              content="{{site.ogimg}}" />{% endif %}
