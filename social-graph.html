@@ -1,6 +1,6 @@
 <!-- Social Media Objects -->
-<meta property="og:url"                content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
-<meta property="og:type"               content="website" />
-<meta property="og:title"              content="{% if page.title %}{{ page.title}}{% else %}{{ site.title }}{% endif %}" />
-<meta property="og:description"        content="{% if page.ogdescription %}{{ page.ogdescription }}{% elif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ page.description }}{% endif %}" />
-<meta property="og:image"              content="{% if page.ogimg %}{{ page.ogimg }}{% endif %}" />
+<meta property="og:url"                content="{% if page.ogurl %}{{ page.ogurl }}{% else %}{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% endif %}" />
+<meta property="og:type"               content="{% if page.layout == 'post' %}post{% else %}website{% endif %}" />
+<meta property="og:title"              content="{% if page.ogtitle %}{{ page.ogtitle }}{% elif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+<meta property="og:description"        content="{% if page.ogdescription %}{{ page.ogdescription }}{% elif page.description %}{{ page.description | truncate: 160 }}{% elif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | strip_html | strip_newlines | truncate: 160 }}{% endif %}" />
+{% if page.ogimg %}<meta property="og:image"              content="{{page.ogimg}}" />{% elif site.ogimg %}<meta property="og:image"              content="{{site.ogimg}}" />{% endif %}
