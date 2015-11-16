@@ -16,9 +16,9 @@
 
 // og:title
 {% if page.ogtitle %}
-  {{ page.ogtitle }}
+  {{ page.ogtitle }} | {{ site.title}}
 {% elif page.title %}
-  {{ page.title }}
+  {{ page.title }} | {{ site.title }}
 {% else %}
   {{ site.title }}
 {% endif %}
@@ -69,4 +69,49 @@
   <meta name="keywords" content="{{ site.seokeyworddefault }}">
 {% endif %}
 
+// Twitter Card
+{% if page.twittercard %}
+  <meta name="twitter:card" content="summary_large_image" />
+{% else %}
+  <meta name="twitter:card" content="summary" />
+{% endif %}
 
+// Twitter Site
+{% if page.twittersite %}
+  @{{ page.twittersite }}
+{% else %}
+  @{{ site.twitter_username }}
+{% endif %}
+
+// Twitter Title
+{% if page.twittertitle %}
+  {{ page.twittertitle }} | {{ site.title }}
+{% elif page.ogtitle %}
+  {{ page.ogtitle }} | {{ site.title}}
+{% elif page.title %}
+  {{ page.title }} | {{ site.title }}
+{% else %}
+  {{ site.title }}
+{% endif %}
+
+// Twitter Description
+{% if page.twitterdescription %}
+  {{ page.twitterdescription | truncate: 160 }}
+{% elif page.ogdescription %}
+  {{ page.ogdescription | truncate: 160 }}
+{% elif page.description %}
+  {{ page.description | truncate: 160 }}
+{% elif page.excerpt %}
+  {{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}
+{% else %}
+  {{ site.description | strip_html | strip_newlines | truncate: 160 }}
+{% endif %}
+
+// Twitter Image
+{% if page.twitterimage %}
+  <meta name="twitter:image"              content="{{page.twitterimage}}" />
+{% elif page.ogimg %}
+  <meta name="twitter:image"              content="{{page.ogimg}}" />
+{% elif site.ogimg %}
+  <meta name="twitter:image"              content="{{site.ogimg}}" />
+{% endif %}
