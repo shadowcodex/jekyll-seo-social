@@ -1,7 +1,7 @@
 [![Slack Status](https://uc-slack.herokuapp.com/badge.svg)](https://uc-slack.herokuapp.com) ![Release Status]
 (https://img.shields.io/badge/Release%20Status-W.I.P.-red.svg)
 
-# jekyll-social-media-head
+# jekyll-seo-social
 A way to easily import social media information from YAML Front matter or other site information.
 
 
