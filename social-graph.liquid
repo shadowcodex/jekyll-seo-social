@@ -1,0 +1,34 @@
+// This file is for looks only. It is what I build the liquid queries on and then make them one liners to bring into the html.
+
+// og:url
+{% if page.ogurl %}
+  {{ page.ogurl }}
+{% else %}
+  {{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}
+{% endif %}
+
+// og:type
+{% if page.layout == "post" %}
+  post
+{% else %}
+  website
+{% endif %}
+
+// og:title
+{% if page.ogdescription %}
+  {{ page.ogdescription }}
+{% elif page.description %}
+  {{ page.description | truncate: 160 }}
+{% elif page.excerpt %}
+  {{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}
+{% else %}
+  {{ site.description | strip_html | strip_newlines | truncate: 160 }}
+{% endif %}
+
+// og:img
+{% if page.ogimg %}
+  <meta property="og:image"              content="{{page.ogimg}}" />
+{% elif site.ogimg %}
+  <meta property="og:image"              content="{{site.ogimg}}" />
+{% endif %}
+
