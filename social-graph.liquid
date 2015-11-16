@@ -17,7 +17,7 @@
 // og:title
 {% if page.ogtitle %}
   {{ page.ogtitle }} | {{ site.title}}
-{% elif page.title %}
+{% elsif page.title %}
   {{ page.title }} | {{ site.title }}
 {% else %}
   {{ site.title }}
@@ -26,9 +26,9 @@
 // og:description
 {% if page.ogdescription %}
   {{ page.ogdescription | truncate: 160 }}
-{% elif page.description %}
+{% elsif page.description %}
   {{ page.description | truncate: 160 }}
-{% elif page.excerpt %}
+{% elsif page.excerpt %}
   {{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}
 {% else %}
   {{ site.description | strip_html | strip_newlines | truncate: 160 }}
@@ -37,7 +37,7 @@
 // og:img
 {% if page.ogimg %}
   <meta property="og:image"              content="{{page.ogimg}}" />
-{% elif site.ogimg %}
+{% elsif site.ogimg %}
   <meta property="og:image"              content="{{site.ogimg}}" />
 {% endif %}
 
@@ -52,11 +52,11 @@
 // Description
 {% if page.seodescription %}
   {{ page.seodescription | truncate: 160 }}
-{% elif page.ogdescription %}
+{% elsif page.ogdescription %}
   {{ page.ogdescription | truncate: 160 }}
-{% elif page.description %}
+{% elsif page.description %}
   {{ page.description | truncate: 160 }}
-{% elif page.excerpt %}
+{% elsif page.excerpt %}
   {{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}
 {% else %}
   {{ site.description | strip_html | strip_newlines | truncate: 160 }}
@@ -65,7 +65,7 @@
 // Keywords *Pick only one keyword or keyword pair for your seo*
 {% if page.seokeyword %}
   <meta name="keywords" content="{{ page.seokeyword }}">
-{% elif site.seokeyworddefault %}
+{% elsif site.seokeyworddefault %}
   <meta name="keywords" content="{{ site.seokeyworddefault }}">
 {% endif %}
 
@@ -86,9 +86,9 @@
 // Twitter Title
 {% if page.twittertitle %}
   {{ page.twittertitle }} | {{ site.title }}
-{% elif page.ogtitle %}
+{% elsif page.ogtitle %}
   {{ page.ogtitle }} | {{ site.title}}
-{% elif page.title %}
+{% elsif page.title %}
   {{ page.title }} | {{ site.title }}
 {% else %}
   {{ site.title }}
@@ -97,11 +97,11 @@
 // Twitter Description
 {% if page.twitterdescription %}
   {{ page.twitterdescription | truncate: 160 }}
-{% elif page.ogdescription %}
+{% elsif page.ogdescription %}
   {{ page.ogdescription | truncate: 160 }}
-{% elif page.description %}
+{% elsif page.description %}
   {{ page.description | truncate: 160 }}
-{% elif page.excerpt %}
+{% elsif page.excerpt %}
   {{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}
 {% else %}
   {{ site.description | strip_html | strip_newlines | truncate: 160 }}
@@ -110,8 +110,8 @@
 // Twitter Image
 {% if page.twitterimage %}
   <meta name="twitter:image"              content="{{page.twitterimage}}" />
-{% elif page.ogimg %}
+{% elsif page.ogimg %}
   <meta name="twitter:image"              content="{{page.ogimg}}" />
-{% elif site.ogimg %}
+{% elsif site.ogimg %}
   <meta name="twitter:image"              content="{{site.ogimg}}" />
 {% endif %}
