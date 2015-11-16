@@ -17,6 +17,8 @@
 // og:title
 {% if page.ogtitle %}
   {{ page.ogtitle }}
+{% elif page.title %}
+  {{ page.title }}
 {% else %}
   {{ site.title }}
 {% endif %}
