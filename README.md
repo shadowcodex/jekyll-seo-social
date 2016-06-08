@@ -1,4 +1,4 @@
-[![Slack Status](https://uc-slack.herokuapp.com/badge.svg)](https://uc-slack.herokuapp.com) ![Release Status]
+[![Visit Facebook Group](https://img.shields.io/badge/Facebook-Visit%20Community-blue.svg)](https://www.facebook.com/groups/204308966622383) ![Release Status]
 (https://img.shields.io/badge/Release%20Status-W.I.P.-red.svg)
 
 # jekyll-seo-social
