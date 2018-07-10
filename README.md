@@ -40,6 +40,6 @@ The following should be set in your site `_config.yml`:
 seokeyworddefault: "Set this as your default keyword incase you are lazy and forget to put one"
 title: "set your default site title"
 description: "set your default site description"
-ogim: "Set your default image link to use on social media"
+ogimg: "Set your default image link to use on social media"
 twitter_username: "Set your default twitter handle without the @ sign"
 ```
